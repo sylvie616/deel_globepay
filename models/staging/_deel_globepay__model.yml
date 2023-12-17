@@ -2,10 +2,10 @@ version: 2
 
 models:
   - name: stg_globepay__acceptance
-    description: "..."
+    description:  "{{ doc('stg_globepay__acceptance') }}"
     columns:
       - name: payment_id
-        description: "....."
+        description: "{{doc('payment_id')}}"
         tests:
           - unique
           - not_null
@@ -13,18 +13,23 @@ models:
               to: source('globepay','exchange_rates')
               field: external_Ref
       - name: external_ref
-        description: "....."
+        description: "{{doc('external_ref')}}"
         tests:
           - unique
           - not_null
       - name: payment_source
-        description: "....."
+        description: "{{doc('payment_source')}}"
         tests:
           - accepted_values:
               values: ['GLOBEPAY']
       - name: payment_usd_amount
-        description: "..."
+        description: "{{doc('payment_usd_amount')}}"
         tests:
           - dbt_utils.expression_is_true:
-            expression: "payment_usd_amount > 0"
+              expression: '> 0'
+      - name: payment_local_amount
+        description: "{{doc('payment_local_amount')}}"
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '> 0'
     

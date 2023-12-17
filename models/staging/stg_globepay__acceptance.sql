@@ -50,8 +50,7 @@ acceptance_transformation AS (
 
 )
 
-select 
-
-*
-
-from acceptance_transformation
+SELECT 
+    *       
+FROM 
+    acceptance_transformation
