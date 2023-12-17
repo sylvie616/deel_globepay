@@ -32,4 +32,13 @@ models:
         tests:
           - dbt_utils.expression_is_true:
               expression: '> 0'
+
+  - name: stg_globepay__chargeback
+    description: "{{ doc('stg_globepay__chargeback') }}"
+    columns:
+      - name: payment_id
+        description: "{{doc('payment_id')}}"
+        tests:
+          - unique
+          - not_null
     

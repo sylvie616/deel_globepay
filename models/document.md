@@ -5,6 +5,12 @@ staging table for acceptance data. Gives information about individual payments
  
 {% enddocs %}
 
+{% docs stg_globepay__chargeback %}
+
+staging table for chargebacl data. Gives information about individual payments
+ 
+{% enddocs %}
+
 # descriptions for columns
 {% docs payment_id %}
 
