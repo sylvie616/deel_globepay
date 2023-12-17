@@ -4,22 +4,27 @@ models:
   - name: stg_globepay__acceptance
     description: "..."
     columns:
-      - name: external_ref
+      - name: payment_id
         description: "....."
         tests:
           - unique
           - not_null
           - relationships:
-              to: ref('exchange_ref')
+              to: source('globepay','exchange_rates')
               field: external_Ref
-      - name: ref
+      - name: external_ref
         description: "....."
         tests:
           - unique
           - not_null
-      - name: source
+      - name: payment_source
         description: "....."
         tests:
           - accepted_values:
               values: ['GLOBEPAY']
+      - name: payment_usd_amount
+        description: "..."
+        tests:
+          - dbt_utils.expression_is_true:
+            expression: "payment_usd_amount > 0"
     

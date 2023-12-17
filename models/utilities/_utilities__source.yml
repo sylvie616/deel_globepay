@@ -3,4 +3,4 @@ version: 2
 sources:
   - name: globepay
     tables:
-      - name: exchange_rates_utilities
+      - name: exchange_rates

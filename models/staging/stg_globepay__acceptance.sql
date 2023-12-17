@@ -14,7 +14,7 @@ source_exchange_rates AS (
     SELECT
         *
     FROM
-        {{ source('globepay', 'exchange_rates_utilities') }}  
+        {{ source('globepay', 'exchange_rates') }}  
 
 ),
 
