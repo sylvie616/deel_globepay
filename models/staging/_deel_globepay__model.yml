@@ -9,3 +9,17 @@ models:
         tests:
           - unique
           - not_null
+          - relationships:
+              to: ref('exchange_ref')
+              field: external_Ref
+      - name: ref
+        description: "....."
+        tests:
+          - unique
+          - not_null
+      - name: source
+        description: "....."
+        tests:
+          - accepted_values:
+              values: ['GLOBEPAY']
+    
