@@ -33,7 +33,7 @@ acceptance_transformation AS (
         ,source_globepay_acceptance.currency AS payment_currency_code
         ,amount AS payment_amount_usd
         -- A simple macro that takes the USD amount and converts it to it's local amount. 
-        -- In a global company, dealing with conversions will be a daily task. Having a macro to do this type of calculation will be useful.
+        -- In a global company, dealing with conversions will be a daily task. plitting the conversion currency data and having a macro to do this type of calculation will be useful.
         ,{{ calculate_local_amount('amount', 'rate') }} AS local_amount
         ,date_time
         -- Dates
