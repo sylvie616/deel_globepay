@@ -5,3 +5,4 @@ sources:
     tables:
       - name: acceptance
       - name: chargeback
+      - name: exchange_rates
