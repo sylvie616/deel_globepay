@@ -1,0 +1,11 @@
+version: 2
+
+models:
+  - name: stg_globepay__acceptance
+    description: "..."
+    columns:
+      - name: external_ref
+        description: "....."
+        tests:
+          - unique
+          - not_null
