@@ -1,5 +1,5 @@
 version: 2
-
+# utilities folder added for exhange rate or date spine
 sources:
   - name: globepay
     tables:

@@ -11,10 +11,28 @@ staging table for chargeback data. Gives information about individual payments
  
 {% enddocs %}
 
+{% docs dim_payments %}
+
+Dimension table for payments ID
+ 
+{% enddocs %}
+
+{% docs fct_payment_date %}
+
+fact table on payment_date
+ 
+{% enddocs %}
+
 # descriptions for columns
 {% docs payment_id %}
 
 ID for payments
+ 
+{% enddocs %}
+
+{% docs payment_date %}
+
+The date the payment was made
  
 {% enddocs %}
 
