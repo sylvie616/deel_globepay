@@ -7,7 +7,7 @@ staging table for acceptance data. Gives information about individual payments
 
 {% docs stg_globepay__chargeback %}
 
-staging table for chargebacl data. Gives information about individual payments
+staging table for chargeback data. Gives information about individual payments
  
 {% enddocs %}
 
@@ -39,5 +39,11 @@ The amount that has been charged from the card in USD.
 {% docs payment_local_amount %}
 
 The amount that has been charged from the card in local currency
+
+{% enddocs %}
+
+{% docs has_chargeback %}
+
+Has chargeback or not. can only be true or false.
 
 {% enddocs %}

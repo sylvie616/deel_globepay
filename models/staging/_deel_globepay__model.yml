@@ -41,4 +41,7 @@ models:
         tests:
           - unique
           - not_null
-    
+      - name: has_chargeback
+        description: "{{doc('has_chargeback')}}"
+        tests:
+          - not_null

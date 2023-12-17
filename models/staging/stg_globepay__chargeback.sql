@@ -14,7 +14,7 @@ chargeback_transformation AS (
     SELECT
 
         external_ref AS payment_id
-        chargeback AS is_chargeback
+        chargeback AS has_chargeback
     
     FROM
 
