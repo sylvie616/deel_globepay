@@ -25,14 +25,14 @@ acceptance_transformation AS (
 
         source_globepay_acceptance.external_ref AS payment_id --renaming to payment_id. The column name "external_ref" should be given to the column "ref."
         ,ref AS external_ref --in the api documentation provided we are given an example of an external_ref which matches the ref column data in the data file. ref is not referred to anywhere in the documentation.
-        ,status payment_source --nowhere in the documentation do we get told what status means + it's the only value is 'True'. Not sure of it's purpose in this data. Perhaps useful outside demo/test purposes.
+        ,status AS payment_status --nowhere in the documentation do we get told what status means + it's the only value is 'True'. Not sure of it's purpose in this data. Perhaps useful outside demo/test purposes.
         ,source AS payment_source --as we are only dealing with globepay data, globepay is our only source. This identifier would be useful if we had other sources.
         ,state AS payment_state
         ,cvv_provided AS payment_cvv_provided
         ,country AS payment_country_code
         ,source_globepay_acceptance.currency AS payment_currency_code
         ,amount AS payment_amount_usd
-        -- A simple macro that takes the USD amount and converts to it's local amount. 
+        -- A simple macro that takes the USD amount and converts it to it's local amount. 
         -- In a global company, dealing with conversions will be a daily task. Having a macro to do this type of calculation will be useful.
         ,{{ calculate_local_amount('amount', 'rate') }}
         ,date_time
