@@ -2,10 +2,46 @@ version: 2
 
 models:
   - name: stg_globepay__acceptance
-    description: "..."
+    description:  "{{ doc('stg_globepay__acceptance') }}"
     columns:
-      - name: external_ref
-        description: "....."
+      - name: payment_id
+        description: "{{doc('payment_id')}}"
         tests:
           - unique
+          - not_null
+          - relationships:
+              to: source('globepay','exchange_rates')
+              field: external_Ref
+      - name: external_ref
+        description: "{{doc('external_ref')}}"
+        tests:
+          - unique
+          - not_null
+      - name: payment_source
+        description: "{{doc('payment_source')}}"
+        tests:
+          - accepted_values:
+              values: ['GLOBEPAY']
+      - name: payment_usd_amount
+        description: "{{doc('payment_usd_amount')}}"
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '> 0'
+      - name: payment_local_amount
+        description: "{{doc('payment_local_amount')}}"
+        tests:
+          - dbt_utils.expression_is_true:
+              expression: '> 0'
+
+  - name: stg_globepay__chargeback
+    description: "{{ doc('stg_globepay__chargeback') }}"
+    columns:
+      - name: payment_id
+        description: "{{doc('payment_id')}}"
+        tests:
+          - unique
+          - not_null
+      - name: has_chargeback
+        description: "{{doc('has_chargeback')}}"
+        tests:
           - not_null

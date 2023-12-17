@@ -3,5 +3,4 @@ version: 2
 sources:
   - name: globepay
     tables:
-      - name: acceptance
-      - name: chargeback
+      - name: exchange_rates
