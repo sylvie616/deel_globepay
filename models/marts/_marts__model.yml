@@ -1,0 +1,9 @@
+models:
+  - name: dim_payments
+    description:  "{{ doc('dim_payments') }}"
+    columns:
+      - name: payment_id
+        description: "{{doc('payment_id')}}"
+        tests:
+          - unique
+          - not_null
