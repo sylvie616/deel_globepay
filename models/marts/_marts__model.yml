@@ -7,3 +7,11 @@ models:
         tests:
           - unique
           - not_null
+  - name: fct_payment_date
+    description:  "{{ doc('fct_payment_date') }}"
+    columns:
+      - name: payment_id
+        description: "{{doc('payment_date')}}"
+        tests:
+          - unique
+          - not_null
