@@ -10,7 +10,7 @@ models:
   - name: fct_payment_date
     description:  "{{ doc('fct_payment_date') }}"
     columns:
-      - name: payment_id
+      - name: payment_date
         description: "{{doc('payment_date')}}"
         tests:
           - unique
